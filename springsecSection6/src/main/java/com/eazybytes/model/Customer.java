@@ -68,7 +68,8 @@ public class Customer {
         this.pwd = pwd;
     }
 
-    public String getRole() {
+    public String 
+    getRole() {
         return role;
     }
 

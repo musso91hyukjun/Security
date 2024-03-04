@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9832d2bb-4d66-4ef3-ae08-0b08d1bbf763" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/eazybytes/config/EazyBankUsernamePwdAuthenticationProvider.java" afterDir="false" />
+    <list default="true" id="9832d2bb-4d66-4ef3-ae08-0b08d1bbf763" name="변경" comment="Provider 설정">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +61,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/vscodeworkspace/Security/springsecSection6/pom.xml",
+    "last_opened_file_path": "C:/vscodeworkspace/Security/pracSecurity2",
     "project.structure.last.edited": "프로젝트",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
@@ -113,7 +113,20 @@
       <option name="presentableId" value="Default" />
       <updated>1708919891953</updated>
     </task>
+    <task id="LOCAL-00001" summary="Provider 설정">
+      <option name="closed" value="true" />
+      <created>1709155613702</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1709155613702</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Provider 설정" />
+    <option name="LAST_COMMIT_MESSAGE" value="Provider 설정" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
