@@ -1,0 +1,40 @@
+<html lang="en" xmlnd:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <form id="loginForm">
+        <input type="text" id="userid" placeholder="Username">
+        <input type="password" id="userpwd" placeholder="Password">
+        <button type="submit">로그인</button>
+    </form>
+    
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function(){
+            event.preventDefault();
+
+            let data = {
+                userid : document.getElementById("userid").value,
+                userpwd : document.getElementById("userpwd").value
+            }
+
+            axios({
+                method : 'post',
+                url: 'http://localhost:9999/loginOk',
+                data: data,
+                headers: {'Content-Type' : 'application/json'}
+            })
+            .then(function(response){
+                console.log(response)
+                window.location.href= "/";
+            })
+            .catch(function(error){
+                console.log(error);
+            })
+        });
+    </script>
+</body>
+</html>
