@@ -1,7 +1,6 @@
 package com.practice.All.controller;
 
 import com.practice.All.entity.UserEntity;
-import com.practice.All.repository.UserRepository;
 import com.practice.All.service.UserService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -32,23 +31,18 @@ public class JoinController {
 
     @PostMapping("/login")
     public ResponseEntity<String> login(@RequestBody UserEntity user) {
-        try{
-            userService.login(user);
-            return ResponseEntity.status(HttpStatus.OK).body("good");
-        } catch(UsernameNotFoundException e) {
+        try {
+            UserEntity loggedInUser = userService.login(user);
+            // 로그인에 성공한 경우
+            return ResponseEntity.status(HttpStatus.OK).body("Login successful!");
+        } catch (UsernameNotFoundException | BadCredentialsException e) {
+            // 로그인에 실패한 경우
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Login failed: " + e.getMessage());
+        } catch (Exception e) {
+            // 다른 예외가 발생한 경우
             e.printStackTrace();
-            System.out.println("예외발생: 아이디를 찾을 수 없습니다.");
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("아이디를 찾을 수 없습니다.");
-        } catch(BadCredentialsException e) {
-            e.printStackTrace();
-            System.out.println("예외발생: 비밀번호가 일치하지 않습니다.");
-            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("비밀번호가 일치하지 않습니다.");
-        } catch(Exception e) {
-            e.printStackTrace();
-            System.out.println("예외발생: 알 수 없는 에러입니다.");
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("알 수 없는 에러입니다.");
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("An error occurred during login.");
         }
     }
-
 
 }
